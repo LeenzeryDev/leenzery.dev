@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 body::before {
     content: '';
     position: fixed; 
@@ -6,12 +7,12 @@ body::before {
     z-index: -1;
 	background-size: cover;
     background: url(https://i.pinimg.com/originals/ba/e0/b1/bae0b111491f38f225962f347ef50248.gif) center / cover no-repeat;
-   }
+}
 body {
   height: 100%;
   margin: 0;
   color: white;
-  font-family: "Segoe UI", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: lighter;
   font-size: 14px;
 }
@@ -21,13 +22,20 @@ body {
 }
 
 h1{
-  font-family: "Segoe UI", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: lighter;
-  font-size: 36px;
+  font-size: 48px;
+}
+@media screen and (min-width: 2560px) {
+	button{
+		width: 8%;
+		height: 5%;
+		font-family: 'Open Sans', sans-serif; font-size: 24px;
+	}
 }
 button {
-  font-family: "Segoe UI", sans-serif;
-  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+  
 }
 
 .btn {
