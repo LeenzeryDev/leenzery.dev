@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
 body::before {
     content: '';
     position: fixed; 
@@ -8,34 +8,42 @@ body::before {
 	background-size: cover;
     background: url(https://i.pinimg.com/originals/ba/e0/b1/bae0b111491f38f225962f347ef50248.gif) center / cover no-repeat;
 }
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+.centered {
+    top: 105%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	position: relative;
+	font-family: 'Nunito', sans-serif;
+	font-weight: lighter;
+	font-size: 48px;
+}
 body {
   height: 100%;
   margin: 0;
   color: white;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-weight: lighter;
-  font-size: 14px;
+  font-size: 24px;
 }
 .av {
     border-radius: 360px;
     box-shadow: 0 0 75px black;
 }
 
-h1{
-  font-family: 'Open Sans', sans-serif;
-  font-weight: lighter;
-  font-size: 48px;
-}
 @media screen and (min-width: 2560px) {
 	button{
 		width: 8%;
 		height: 5%;
-		font-family: 'Open Sans', sans-serif; font-size: 24px;
+		font-family: 'Nunito', sans-serif; font-size: 24px;
 	}
 }
 button {
-  font-family: 'Open Sans', sans-serif;
-  
+  font-family: 'Nunito', sans-serif; font-size: 16px;
 }
 
 .btn {
