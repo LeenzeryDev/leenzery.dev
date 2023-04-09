@@ -32,7 +32,6 @@ $(document).ready(function() {
   // The default language is English
   var lang = "en";
   var navLang = navigator.language || navigator.userLanguage;
-  console.log(navLang in arrLang);
   if(navLang in arrLang){
     lang = navLang;
   }
