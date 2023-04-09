@@ -1,53 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<meta charset="utf-8">
-  <meta name="keywords" content="Leenzery, LeenzeryDev, leenzery, SoullyLands, BedrockLand, leenzerydev">
-  <meta name="author" content="leenzery">
+  	<meta name="keywords" content="Leenzery, LeenzeryDev, leenzery, SoullyLands, BedrockLand, leenzerydev">
+  	<meta name="author" content="leenzery">
 	<title>leenzery</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
-	<div class="container">
-		<p align="center" style="padding-top: 5%;"><img class="av" src="https://avatars.githubusercontent.com/u/63073463?v=4" width="250" height="250"></p>
-		<div class="centered">leenzery</div>
+	<div class="acrylic shadow" style="padding: 4% 6%;">
+		<div class="acrylic shadow" style="float: left; width: 30%; padding: 4% 6%;">
+			<p><img class="av" src="https://avatars.githubusercontent.com/u/63073463?v=4" width="75%" height="75%"></p>
+			leenzery
+			<p style="font-size:16px;" class="lang" key="desc"></p>
+				<button class="translate btn" id="ru">Russian</button>, <button class="translate btn" id="uk">Ukrainian</button>, <button class="translate btn" id="en">English</button>
+		</div>
+		<div style="padding: 2% 1%;" class="acrylic shadow" align="center">
+			<h1 class="lang" key="Links"></h1>
+			<button class="btn" onclick="location.href='https://github.com/leenzerydev';">Github</button>
+			<button class="btn" onclick="location.href='https://t.me/leenzerydev';">Telegram</button>
+			<button class="btn" onclick="location.href='https://openvk.uk/leenzerydev';">OpenVK</button>
+			<button class="btn" onclick="location.href='https://www.youtube.com/channel/UCFeth1-5wYiqsXrp4imJulA';">YouTube</button>
+			<button class="btn" onclick="location.href='https://vepurovk.xyz/leenzerydev';">VepurOVK</button>
+			<button class="btn" onclick="location.href='https://www.twitch.tv/leenzerydev';">Twitch</button>
+		</div>
+		<div style="padding: 2% 1%;" class="acrylic shadow" align="center">
+			<h1 class="lang" key="Donate"></h1>
+			<button class="btn" onclick="location.href='https://new.donatepay.ru/@leenzerydev';">DonatePay</button>
+			<button class="btn" onclick="location.href='https://www.donationalerts.com/r/leenzery';">DonationAlerts</button>
+		</div>
+		<div style="padding: 2% 1%;" class="acrylic shadow" align="center">
+			<h1 class="lang" key="???"></h1>
+		</div>
 	</div>
-	<div align="center" class="acrylic shadow">
-    джун ничегонеделания, пишу в основном на c# или java, мне 16, в данный момент разрабатываю uwp клиент для OpenVK и KaomojiUWP
-  </div>
-	<div align="center">
-	<form>
-        <button class="btn" type="submit" formaction="https://github.com/leenzerydev">Github</button>
-		<button class="btn" type="submit" formaction="https://t.me/leenzerydev">Telegram</button>
-
-		<button class="btn" type="submit" formaction="https://openvk.uk/leenzerydev">OpenVK</button>
-		<button class="btn" type="submit" formaction="https://www.youtube.com/channel/UCFeth1-5wYiqsXrp4imJulA">YouTube</button>
-		<button class="btn" type="submit" formaction="https://vepurovk.xyz/leenzerydev">VepurOVK</button>
-		<button class="btn" type="submit" formaction="https://www.twitch.tv/leenzerydev">Twitch</button>
-		
-	</form>
-	<button class="btn" onclick="openForm()">Discord</button>
-<div align="center" class="form-popup shadow" id="form">
-	  Discord: LeenzeryDev#0482
-	  <button class="btn" onclick="closeForm()">Закрыть</button>
-	</div>
-	<div align="center" class="acrylic shadow">
-    Мои проекты:<br>
-    <form>
-        <button class="btn" type="submit" formaction="https://github.com/leenzerydev/KaomojiUWP">KaomojiUWP(Open Source)</button>
-		    <button class="btn" type="submit" formaction="https://soully-lands.one">SoullyLands</button>
-        <button class="btn" type="submit" formaction="">позже чет ещё добавлю</button>
-	   </form>
-  </div>
-	
-<script>
-function openForm(){
-  document.getElementById("form").style.display = "block";
-}
-function closeForm(){
-  document.getElementById("form").style.display = "none";
-}
-</script>
 </body>
+<script src="js/main.js"></script>
 </html>
