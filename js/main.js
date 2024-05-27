@@ -28,7 +28,15 @@ function getAge(dateString) {
   }
   return age;
 }
+function update() {
+  var source = 'https://spotify-github-profile.vercel.app/api/view.svg?uid=a97y788fh1ftxntus0etruby6&cover_image=true&theme=default&show_offline=true&background_color=121212&interchange=true&bar_color_cover=true',
+      timestamp = (new Date()).getTime(),
+      newUrl = source + '?_=' + timestamp;
+  document.getElementById("spotify").src = newUrl;
+  setTimeout(update, 1000);
+}
 $(document).ready(function() {
+  update();
   // The default language is English
   var lang = "en";
   var navLang = navigator.language || navigator.userLanguage;
