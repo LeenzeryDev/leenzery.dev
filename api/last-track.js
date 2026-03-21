@@ -48,6 +48,6 @@ export default async function handler(req, res) {
       nowplaying: !!(track["@attr"] && track["@attr"].nowplaying),
     });
   } catch (e) {
-    return res.status(500).json({ error: "Failed to fetch from Last.fm" });
+    return res.status(500).json({ error: e.message });
   }
 }
