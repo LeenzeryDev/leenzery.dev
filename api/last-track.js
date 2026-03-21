@@ -26,6 +26,7 @@ export default async function handler(req, res) {
     return res.status(200).json({
       name: track.name,
       artist: track.artist["#text"],
+      image: track.image[track.image.length - 1]["#text"],
       nowplaying: !!(track["@attr"] && track["@attr"].nowplaying),
     });
   } catch (e) {

@@ -1,5 +1,9 @@
 {
   "version": 2,
-  "public": true,
-  "rewrites": [{ "source": "/api/(.*)", "destination": "/api/$1" }]
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/$1" },
+    { "source": "/", "status": 404 },
+    { "source": "/index.html", "status": 404 },
+    { "source": "/style.css", "status": 404 }
+  ]
 }

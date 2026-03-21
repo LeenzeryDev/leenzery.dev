@@ -199,10 +199,27 @@ body {
 /* last.fm track styling */
 .lfm-info {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    text-align: center;
+    gap: 15px;
     width: 100%;
+    padding: 0 10px;
+}
+
+.lfm-cover {
+    width: 64px;
+    height: 64px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    object-fit: cover;
+    background-color: rgba(255, 255, 255, 0.1);
+    flex-shrink: 0;
+}
+
+.lfm-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    text-align: left;
 }
 
 .track-name {
@@ -212,7 +229,6 @@ body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 250px;
 }
 
 .artist-name {
