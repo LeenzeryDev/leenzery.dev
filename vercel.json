@@ -1,9 +1,21 @@
 {
   "version": 2,
-  "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api/$1" },
-    { "source": "/", "status": 404 },
-    { "source": "/index.html", "status": 404 },
-    { "source": "/style.css", "status": 404 }
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    },
+    {
+      "src": "/index.html",
+      "status": 404
+    },
+    {
+      "src": "/style.css",
+      "status": 404
+    },
+    {
+      "src": "/",
+      "status": 404
+    }
   ]
 }
