@@ -172,27 +172,25 @@
                     const track = await response.json();
 
                     if (track && !track.error) {
-                        const lfmText = document.getElementById("lfm-text");
-                        if (lfmText) {
-                            lfmText.querySelector(".track-name").textContent =
-                                track.name;
-                            lfmText.querySelector(".artist-name").textContent =
-                                track.artist;
-                        }
+                        const elName = document.querySelector(".track-name");
+                        const elArtist = document.querySelector(".artist-name");
+                        const elCover = document.querySelector(".lfm-cover");
+                        const elStatus = document.querySelector("#lfm-status");
 
-                        const cover = document.getElementById("lfm-cover");
-                        if (cover) {
+                        if (elName) elName.textContent = track.name;
+                        if (elArtist) elArtist.textContent = track.artist;
+
+                        if (elCover) {
                             if (track.image && track.image !== "") {
-                                cover.src = track.image;
-                                cover.style.display = "block";
+                                elCover.src = track.image;
+                                elCover.style.display = "block";
                             } else {
-                                cover.style.display = "none";
+                                elCover.style.display = "none";
                             }
                         }
 
-                        const status = document.getElementById("lfm-status");
-                        if (status) {
-                            status.textContent = track.nowplaying
+                        if (elStatus) {
+                            elStatus.textContent = track.nowplaying
                                 ? "Слушаю сейчас"
                                 : "Последний трек";
                         }

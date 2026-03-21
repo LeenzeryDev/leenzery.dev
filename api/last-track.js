@@ -18,28 +18,33 @@ export default async function handler(req, res) {
     );
     const data = await response.json();
 
-    if (
-      !data.recenttracks ||
-      !data.recenttracks.track ||
-      data.recenttracks.track.length === 0
-    ) {
+    if (!data.recenttracks?.track?.[0]) {
       return res.status(404).json({ error: "No tracks found" });
     }
 
     const track = data.recenttracks.track[0];
+    const name = track.name;
+    const artist = track.artist["#text"];
 
-    let imageUrl = "";
-    if (track.image && track.image.length > 0) {
-      const validImages = track.image.filter((img) => img["#text"] !== "");
-      if (validImages.length > 0) {
-        imageUrl = validImages[validImages.length - 1]["#text"];
+    // ищем картинку ручками для обложки, ибо ластфм их почему-то отдаёт пустыми
+    if (name && artist) {
+      try {
+        const infoRes = await fetch(
+          `https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=${LFM_API_KEY}&artist=${encodeURIComponent(artist)}&track=${encodeURIComponent(name)}&format=json`,
+        );
+        const infoData = await infoRes.json();
+        imageUrl =
+          getImg(infoData?.track?.album?.image) ||
+          getImg(infoData?.track?.image);
+      } catch (e) {
+        console.error("LFM Info Fallback Error:", e);
       }
     }
 
     return res.status(200).json({
-      name: track.name,
-      artist: track.artist["#text"],
-      image: track.image[track.image.length - 1]["#text"],
+      name,
+      artist,
+      image: imageUrl,
       nowplaying: !!(track["@attr"] && track["@attr"].nowplaying),
     });
   } catch (e) {
