@@ -172,17 +172,30 @@
                     const track = await response.json();
 
                     if (track && !track.error) {
-                        document.querySelector(
-                            "#lfm-track-info .track-name",
-                        ).textContent = track.name;
-                        document.querySelector(
-                            "#lfm-track-info .artist-name",
-                        ).textContent = track.artist;
+                        const lfmText = document.getElementById("lfm-text");
+                        if (lfmText) {
+                            lfmText.querySelector(".track-name").textContent =
+                                track.name;
+                            lfmText.querySelector(".artist-name").textContent =
+                                track.artist;
+                        }
 
-                        document.querySelector("#lfm-status").textContent =
-                            track.nowplaying
+                        const cover = document.getElementById("lfm-cover");
+                        if (cover) {
+                            if (track.image && track.image !== "") {
+                                cover.src = track.image;
+                                cover.style.display = "block";
+                            } else {
+                                cover.style.display = "none";
+                            }
+                        }
+
+                        const status = document.getElementById("lfm-status");
+                        if (status) {
+                            status.textContent = track.nowplaying
                                 ? "Слушаю сейчас"
                                 : "Последний трек";
+                        }
                     }
                 } catch (e) {
                     console.error("LFM Proxy Error:", e);

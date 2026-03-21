@@ -17,10 +17,23 @@ export default async function handler(req, res) {
       `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${LFM_USER}&api_key=${LFM_API_KEY}&format=json&limit=1`,
     );
     const data = await response.json();
+
+    if (
+      !data.recenttracks ||
+      !data.recenttracks.track ||
+      data.recenttracks.track.length === 0
+    ) {
+      return res.status(404).json({ error: "No tracks found" });
+    }
+
     const track = data.recenttracks.track[0];
 
-    if (!track) {
-      return res.status(404).json({ error: "No tracks found" });
+    let imageUrl = "";
+    if (track.image && track.image.length > 0) {
+      const validImages = track.image.filter((img) => img["#text"] !== "");
+      if (validImages.length > 0) {
+        imageUrl = validImages[validImages.length - 1]["#text"];
+      }
     }
 
     return res.status(200).json({
