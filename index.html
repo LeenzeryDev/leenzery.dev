@@ -168,10 +168,13 @@
 
             async function updateLastFM() {
                 try {
+                    console.log("Fetching music from proxy...");
                     const response = await fetch(PROXY_URL);
                     const track = await response.json();
 
                     if (track && !track.error) {
+                        console.log("Music data received:", track.name);
+
                         const elName = document.querySelector(".track-name");
                         const elArtist = document.querySelector(".artist-name");
                         const elCover = document.querySelector(".lfm-cover");
@@ -194,9 +197,11 @@
                                 ? "Слушаю сейчас"
                                 : "Последний трек";
                         }
+                    } else if (track && track.error) {
+                        console.warn("LFM Proxy returned error:", track.error);
                     }
                 } catch (e) {
-                    console.error("LFM Proxy Error:", e);
+                    console.error("LFM Proxy Fetch Error:", e);
                 }
             }
 

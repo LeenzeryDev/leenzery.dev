@@ -26,8 +26,17 @@ export default async function handler(req, res) {
     const name = track.name;
     const artist = track.artist["#text"];
 
-    // ищем картинку ручками для обложки, ибо ластфм их почему-то отдаёт пустыми
-    if (name && artist) {
+    const getImg = (imgs) => {
+      if (!imgs || !Array.isArray(imgs)) return "";
+      return (
+        [...imgs].reverse().find((img) => img["#text"] !== "")?.["#text"] || ""
+      );
+    };
+
+    let imageUrl = getImg(track.image);
+
+    // ищем картинку ручками для обложки, ибо ластфм их часто отдаёт пустыми в списке
+    if (!imageUrl && name && artist) {
       try {
         const infoRes = await fetch(
           `https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=${LFM_API_KEY}&artist=${encodeURIComponent(artist)}&track=${encodeURIComponent(name)}&format=json`,
