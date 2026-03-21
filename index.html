@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Leenzery</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="start-screen">
+            <header class="header">
+                <h1>Пуск</h1>
+                <div class="user-profile">
+                    <span>leenzery</span>
+                    <div class="avatar">
+                        <img
+                            src="https://github.com/leenzerydev.png"
+                            alt="Avatar"
+                        />
+                    </div>
+                </div>
+            </header>
+
+            <div class="groups-container">
+                <section class="tile-group">
+                    <h2 class="group-title">Профиль</h2>
+                    <div class="tile-grid">
+                        <div class="tile tile-large tile-blue">
+                            <img
+                                src="https://github.com/leenzerydev.png"
+                                alt="Avatar"
+                                class="tile-avatar"
+                            />
+                            <div class="bio-content">
+                                <h2>leenzery</h2>
+                                <span class="subtitle"
+                                    >Full-stack Developer</span
+                                >
+                                <p></p>
+                            </div>
+                            <div class="tile-label">Профиль</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="tile-group">
+                    <h2 class="group-title">Соцсети</h2>
+                    <div class="tile-grid">
+                        <a
+                            href="https://t.me/leenzerydev"
+                            class="tile tile-single tile-teal"
+                        >
+                            <div class="tile-content">
+                                <div class="tile-icon">
+                                    <i data-lucide="send"></i>
+                                </div>
+                                <div class="tile-label">Telegram</div>
+                            </div>
+                        </a>
+                        <a
+                            href="https://openvk.org/leenzerydev"
+                            class="tile tile-single tile-cobalt"
+                        >
+                            <div class="tile-content">
+                                <div class="tile-icon"></div>
+                                <div class="tile-label">OpenVK</div>
+                            </div>
+                        </a>
+                        <a
+                            href="https://www.last.fm/user/leenzery"
+                            class="tile tile-double tile-lastfm"
+                            id="lfm-tile"
+                        >
+                            <div class="tile-content">
+                                <div class="tile-icon"></div>
+                                <div class="lfm-info" id="lfm-track-info">
+                                    <span class="track-name">Загрузка...</span>
+                                    <span class="artist-name">Last.fm</span>
+                                </div>
+                            </div>
+                            <div class="tile-label">Last.fm</div>
+                            <div class="tile-status" id="lfm-status">
+                                Последний трек
+                            </div>
+                        </a>
+                        <a
+                            href="mailto:ly@leenzery.dev"
+                            class="tile tile-single tile-mauve"
+                        >
+                            <div class="tile-content">
+                                <div class="tile-icon"></div>
+                                <div class="tile-label">Email</div>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="tile-group">
+                    <h2 class="group-title">Проекты</h2>
+                    <div class="tile-grid">
+                        <a
+                            href="https://github.com/leenzerydev"
+                            class="tile tile-double tile-steel"
+                        >
+                            <div class="tile-content">
+                                <div class="tile-icon"></div>
+                                <div class="tile-label">GitHub</div>
+                            </div>
+                            <div class="tile-status">Мои репозитории</div>
+                        </a>
+                        <div class="tile tile-single tile-orange">
+                            <div class="tile-content">
+                                <div class="tile-icon"></div>
+                                <div class="tile-label">Blog</div>
+                            </div>
+                            <div class="tile-status">Soon</div>
+                        </div>
+                        <div class="tile tile-single tile-green">
+                            <div class="tile-content">
+                                <div class="tile-icon"></div>
+                                <div class="tile-label">Gallery</div>
+                            </div>
+                            <div class="tile-status">Soon</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="tile-group">
+                    <h2 class="group-title">Навыки</h2>
+                    <div class="tile-grid">
+                        <div class="tile tile-single tile-mauve">
+                            <div class="tile-content">
+                                <div class="tile-label">C#</div>
+                            </div>
+                        </div>
+                        <div class="tile tile-single tile-blue">
+                            <div class="tile-content">
+                                <div class="tile-label">TypeScript</div>
+                            </div>
+                        </div>
+                        <div class="tile tile-single tile-teal">
+                            <div class="tile-content">
+                                <div class="tile-label">Vue</div>
+                            </div>
+                        </div>
+                        <div class="tile tile-single tile-cobalt">
+                            <div class="tile-content">
+                                <div class="tile-label">Node.js</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <script>
+            const PROXY_URL = "/api/last-track";
+
+            async function updateLastFM() {
+                try {
+                    const response = await fetch(PROXY_URL);
+                    const track = await response.json();
+
+                    if (track && !track.error) {
+                        document.querySelector(
+                            "#lfm-track-info .track-name",
+                        ).textContent = track.name;
+                        document.querySelector(
+                            "#lfm-track-info .artist-name",
+                        ).textContent = track.artist;
+
+                        document.querySelector("#lfm-status").textContent =
+                            track.nowplaying
+                                ? "Слушаю сейчас"
+                                : "Последний трек";
+                    }
+                } catch (e) {
+                    console.error("LFM Proxy Error:", e);
+                }
+            }
+
+            updateLastFM();
+            setInterval(updateLastFM, 30000);
+
+            const container = document.querySelector(".groups-container");
+            container.addEventListener("wheel", (e) => {
+                if (window.innerWidth > 600) {
+                    e.preventDefault();
+                    container.scrollLeft += e.deltaY;
+                }
+            });
+        </script>
+    </body>
+</html>
