@@ -1,0 +1,245 @@
+body, input, textarea, select, button, a, div, span, p, h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+    font-family: "Segoe UI", Tahoma, Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+}
+
+.bg-stretch-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+    overflow: hidden;
+}
+
+body > .bg-stretch-container {
+    position: fixed;
+}
+
+.bg-stretch-image {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.clear {
+    clear: both;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+}
+
+.start-screen {
+    padding: 40px 10%;
+}
+
+.header {
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.header-title {
+    float: left;
+    font-size: 42px;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 1px;
+}
+
+.user-profile {
+    float: right;
+    margin-top: 10px;
+}
+
+.user-name {
+    font-size: 16px;
+    margin-right: 15px;
+    vertical-align: middle;
+}
+
+.user-profile .avatar {
+    display: inline;
+    vertical-align: middle;
+    border: 1px solid #555555;
+    width: 40px;
+    height: 40px;
+}
+
+.groups-container {
+    width: 100%;
+}
+
+.tile-group {
+    float: left;
+    margin-right: 50px;
+    margin-bottom: 40px;
+    width: 320px;
+}
+
+.group-title {
+    font-size: 22px;
+    font-weight: normal;
+    margin: 0 0 15px 5px;
+    color: #cccccc;
+}
+
+.tile-grid {
+    width: 320px;
+}
+
+.tile {
+    float: left;
+    margin: 5px;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+    font-family: "Segoe UI", Tahoma, Arial, Helvetica, sans-serif;
+}
+
+.tile-single {
+    width: 150px;
+    height: 150px;
+}
+
+.tile-double {
+    width: 310px;
+    height: 150px;
+}
+
+.tile-large {
+    width: 310px;
+    height: 310px;
+}
+
+.tile-teal {
+    background-color: #00aba9;
+}
+
+.tile-cobalt {
+    background-color: #0050ef;
+}
+
+.tile-blue {
+    background-color: #2d89ef;
+}
+
+.tile-lastfm {
+    background-color: #d51007;
+}
+
+.tile-mauve {
+    background-color: #76608a;
+}
+
+.tile-steel {
+    background-color: #647687;
+}
+
+.tile-green {
+    background-color: #60a917;
+}
+
+.tile-node {
+    background-color: #43853d;
+}
+
+.tile-content {
+    padding: 15px;
+    height: 100%;
+}
+
+.tile-label {
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.tile-status {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    font-size: 11px;
+    color: #eeeeee;
+}
+
+.bio-content {
+    padding: 10px;
+}
+
+.bio-content h2 {
+    font-size: 20px;
+    margin: 0 0 5px 0;
+}
+
+.bio-content .subtitle {
+    font-size: 13px;
+    color: #dddddd;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.bio-content p {
+    font-size: 12px;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.tile-avatar {
+    float: right;
+    margin: 10px;
+    border: 1px solid #ffffff;
+}
+
+.tile-icon {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.tile-icon-text {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 100px;
+}
+
+.lfm-info {
+    width: 100%;
+}
+
+.lfm-cover {
+    float: left;
+    margin-right: 10px;
+    border: 1px solid #ffffff;
+}
+
+.lfm-text {
+    float: left;
+    width: 200px;
+}
+
+.track-name {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.artist-name {
+    font-size: 12px;
+    color: #dddddd;
+}
+
+.tile-banner-wrapper {
+    text-align: center;
+    padding-top: 59px;
+}

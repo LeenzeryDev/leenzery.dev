@@ -199,6 +199,13 @@ body {
     background-color: rgba(51, 51, 51, 0.6);
 }
 
+.tile-banner-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
 /* last.fm track styling */
 .lfm-info {
     display: flex;

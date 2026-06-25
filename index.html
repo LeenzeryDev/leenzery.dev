@@ -1,303 +1,285 @@
 <!doctype html>
 <html lang="ru">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Leenzery</title>
-        <link rel="stylesheet" href="style.css" />
-    </head>
-    <body>
-        <div class="start-screen">
-            <header class="header">
-                <h1>Пуск</h1>
-                <div class="user-profile">
-                    <span>leenzery</span>
-                    <div class="avatar">
-                        <img
-                            src="https://github.com/leenzerydev.png"
-                            alt="Avatar"
-                        />
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leenzery</title>
+    <script type="text/javascript">
+        if (!document.querySelector ||
+            !window.addEventListener ||
+            !window.fetch ||
+            !window.CSS ||
+            !window.CSS.supports ||
+            !window.CSS.supports("color", "var(--test)")) {
+            window.location.href = "retro.html";
+        }
+    </script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="start-screen">
+        <header class="header">
+            <h1>Пуск</h1>
+            <div class="user-profile">
+                <span>leenzery</span>
+                <div class="avatar">
+                    <img src="https://github.com/leenzerydev.png" alt="Avatar" />
+                </div>
+            </div>
+        </header>
+
+        <div class="groups-container">
+            <section class="tile-group">
+                <h2 class="group-title">Профиль</h2>
+                <div class="tile-grid">
+                    <div class="tile tile-large tile-teal">
+                        <img src="https://github.com/leenzerydev.png" alt="Avatar" class="tile-avatar" />
+                        <div class="bio-content">
+                            <h2>leenzery</h2>
+                            <span class="subtitle">Full-stack Developer</span>
+                            <p>
+                                <span id="age-display"></span> лет. Студент,
+                                энтузиаст, разработчик. Любитель старого
+                                веба и железяк. Пишу всё, что можно написать
+                                на C# именно на нём.
+                            </p>
+                        </div>
+                        <div class="tile-label">Профиль</div>
                     </div>
                 </div>
-            </header>
+            </section>
 
-            <div class="groups-container">
-                <section class="tile-group">
-                    <h2 class="group-title">Профиль</h2>
-                    <div class="tile-grid">
-                        <div class="tile tile-large tile-teal">
-                            <img
-                                src="https://github.com/leenzerydev.png"
-                                alt="Avatar"
-                                class="tile-avatar"
-                            />
-                            <div class="bio-content">
-                                <h2>leenzery</h2>
-                                <span class="subtitle"
-                                    >Full-stack Developer</span
-                                >
-                                <p>
-                                    <span id="age-display"></span> лет. Студент,
-                                    энтузиаст, разработчик. Любитель старого
-                                    веба и железяк. Пишу всё, что можно написать
-                                    на C# именно на нём.
-                                </p>
+            <section class="tile-group">
+                <h2 class="group-title">Соцсети</h2>
+                <div class="tile-grid">
+                    <a href="https://t.me/leenzerydev" class="tile tile-single tile-cobalt">
+                        <div class="tile-content">
+                            <div class="tile-icon">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/960px-Telegram_logo.svg.png"
+                                    alt="telegram logo" />
                             </div>
-                            <div class="tile-label">Профиль</div>
+                            <div class="tile-label">Telegram</div>
+                        </div>
+                    </a>
+                    <a href="https://openvk.org/leenzerydev" class="tile tile-single tile-blue">
+                        <div class="tile-content">
+                            <div class="tile-icon">
+                                <img src="https://raw.githubusercontent.com/OpenVK/openvk/a661f2bca0a120e3c762b1c0749864a6e5c7430a/Web/static/img/logo.svg"
+                                    alt="openvk logo" />
+                            </div>
+                            <div class="tile-label">OpenVK</div>
+                        </div>
+                    </a>
+                    <a href="https://www.last.fm/user/leenzery" class="tile tile-double tile-lastfm" id="lfm-tile">
+                        <div class="tile-content">
+                            <div class="lfm-info">
+                                <img src="" alt="cover" class="lfm-cover" style="display: none" />
+                                <div class="lfm-text">
+                                    <span class="track-name">Загрузка...</span>
+                                    <span class="artist-name">Last.fm</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tile-label">Last.fm</div>
+                        <div class="tile-status" id="lfm-status">
+                            Последний трек
+                        </div>
+                    </a>
+                    <a href="mailto:ly@leenzery.dev" class="tile tile-single tile-mauve">
+                        <div class="tile-content">
+                            <div class="tile-icon">
+                                <img src="https://upload.wikimedia.org/wikipedia/ru/d/db/Windows_Mail_Icon.png"
+                                    alt="outlook logo" />
+                            </div>
+                            <div class="tile-label">Email</div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <section class="tile-group">
+                <h2 class="group-title">Проекты</h2>
+                <div class="tile-grid">
+                    <a href="https://github.com/leenzerydev" class="tile tile-double tile-steel">
+                        <div class="tile-content">
+                            <div class="tile-icon">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
+                                    alt="github logo" />
+                            </div>
+                            <div class="tile-label">GitHub</div>
+                        </div>
+                        <div class="tile-status">Мои репозитории</div>
+                    </a>
+                    <a href="https://soullylands.ch" class="tile tile-single tile-mauve">
+                        <div class="tile-content">
+                            <div class="tile-icon">
+                                <img src="https://soullylands.ch/images/logo.png" alt="sl logo" />
+                            </div>
+                            <div class="tile-label">SoullyLands</div>
+                        </div>
+                        <div class="tile-status"></div>
+                    </a>
+                    <a href="https://github.com/OpenVK/openvk/commits?author=LeenzeryDev"
+                        class="tile tile-single tile-blue">
+                        <div class="tile-content">
+                            <div class="tile-icon">
+                                <img src="https://raw.githubusercontent.com/OpenVK/openvk/a661f2bca0a120e3c762b1c0749864a6e5c7430a/Web/static/img/logo.svg"
+                                    alt="openvk logo" />
+                            </div>
+                            <div class="tile-label">OpenVK</div>
+                        </div>
+                        <div class="tile-status">Contributor</div>
+                    </a>
+                    <div class="tile tile-single tile-green">
+                        <div class="tile-content">
+                            <div class="tile-icon"></div>
+                            <div class="tile-label">OpenVkNetApi</div>
+                        </div>
+                        <div class="tile-status">Soon</div>
+                    </div>
+                    <div class="tile tile-single tile-steel">
+                        <div class="tile-content">
+                            <div class="tile-icon"></div>
+                            <div class="tile-label">Velora</div>
+                        </div>
+                        <div class="tile-status">Soon</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tile-group">
+                <h2 class="group-title">Навыки</h2>
+                <div class="tile-grid">
+                    <div class="tile tile-single tile-mauve">
+                        <div class="tile-content">
+                            <div class="tile-icon">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Logo_C_sharp.svg/960px-Logo_C_sharp.svg.png"
+                                    alt="csharp logo" />
+                            </div>
+                            <div class="tile-label">C#</div>
                         </div>
                     </div>
-                </section>
-
-                <section class="tile-group">
-                    <h2 class="group-title">Соцсети</h2>
-                    <div class="tile-grid">
-                        <a
-                            href="https://t.me/leenzerydev"
-                            class="tile tile-single tile-cobalt"
-                        >
-                            <div class="tile-content">
-                                <div class="tile-icon">
-                                    <img
-                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/960px-Telegram_logo.svg.png"
-                                        alt="telegram logo"
-                                    />
-                                </div>
-                                <div class="tile-label">Telegram</div>
+                    <div class="tile tile-single tile-blue">
+                        <div class="tile-content">
+                            <div class="tile-icon">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/960px-Typescript_logo_2020.svg.png"
+                                    alt="ts logo" />
                             </div>
-                        </a>
-                        <a
-                            href="https://openvk.org/leenzerydev"
-                            class="tile tile-single tile-blue"
-                        >
-                            <div class="tile-content">
-                                <div class="tile-icon">
-                                    <img
-                                        src="https://raw.githubusercontent.com/OpenVK/openvk/a661f2bca0a120e3c762b1c0749864a6e5c7430a/Web/static/img/logo.svg"
-                                        alt="openvk logo"
-                                    />
-                                </div>
-                                <div class="tile-label">OpenVK</div>
-                            </div>
-                        </a>
-                        <a
-                            href="https://www.last.fm/user/leenzery"
-                            class="tile tile-double tile-lastfm"
-                            id="lfm-tile"
-                        >
-                            <div class="tile-content">
-                                <div class="lfm-info">
-                                    <img
-                                        src=""
-                                        alt="cover"
-                                        class="lfm-cover"
-                                        style="display: none"
-                                    />
-                                    <div class="lfm-text">
-                                        <span class="track-name"
-                                            >Загрузка...</span
-                                        >
-                                        <span class="artist-name">Last.fm</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tile-label">Last.fm</div>
-                            <div class="tile-status" id="lfm-status">
-                                Последний трек
-                            </div>
-                        </a>
-                        <a
-                            href="mailto:ly@leenzery.dev"
-                            class="tile tile-single tile-mauve"
-                        >
-                            <div class="tile-content">
-                                <div class="tile-icon">
-                                    <img
-                                        src="https://upload.wikimedia.org/wikipedia/ru/d/db/Windows_Mail_Icon.png"
-                                        alt="outlook logo"
-                                    />
-                                </div>
-                                <div class="tile-label">Email</div>
-                            </div>
-                        </a>
-                    </div>
-                </section>
-
-                <section class="tile-group">
-                    <h2 class="group-title">Проекты</h2>
-                    <div class="tile-grid">
-                        <a
-                            href="https://github.com/leenzerydev"
-                            class="tile tile-double tile-steel"
-                        >
-                            <div class="tile-content">
-                                <div class="tile-icon">
-                                    <img
-                                        src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
-                                        alt="github logo"
-                                    />
-                                </div>
-                                <div class="tile-label">GitHub</div>
-                            </div>
-                            <div class="tile-status">Мои репозитории</div>
-                        </a>
-                        <a
-                            href="https://soullylands.ch"
-                            class="tile tile-single tile-mauve"
-                        >
-                            <div class="tile-content">
-                                <div class="tile-icon">
-                                    <img
-                                        src="https://soullylands.ch/images/logo.png"
-                                        alt="sl logo"
-                                    />
-                                </div>
-                                <div class="tile-label">SoullyLands</div>
-                            </div>
-                            <div class="tile-status"></div>
-                        </a>
-                        <a
-                            href="https://github.com/OpenVK/openvk/commits?author=LeenzeryDev"
-                            class="tile tile-single tile-blue"
-                        >
-                            <div class="tile-content">
-                                <div class="tile-icon">
-                                    <img
-                                        src="https://raw.githubusercontent.com/OpenVK/openvk/a661f2bca0a120e3c762b1c0749864a6e5c7430a/Web/static/img/logo.svg"
-                                        alt="openvk logo"
-                                    />
-                                </div>
-                                <div class="tile-label">OpenVK</div>
-                            </div>
-                            <div class="tile-status">Contributor</div>
-                        </a>
-                        <div class="tile tile-single tile-green">
-                            <div class="tile-content">
-                                <div class="tile-icon"></div>
-                                <div class="tile-label">OpenVkNetApi</div>
-                            </div>
-                            <div class="tile-status">Soon</div>
-                        </div>
-                        <div class="tile tile-single tile-steel">
-                            <div class="tile-content">
-                                <div class="tile-icon"></div>
-                                <div class="tile-label">Velora</div>
-                            </div>
-                            <div class="tile-status">Soon</div>
+                            <div class="tile-label">TypeScript</div>
                         </div>
                     </div>
-                </section>
-
-                <section class="tile-group">
-                    <h2 class="group-title">Навыки</h2>
-                    <div class="tile-grid">
-                        <div class="tile tile-single tile-mauve">
-                            <div class="tile-content">
-                                <div class="tile-icon">
-                                    <img
-                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Logo_C_sharp.svg/960px-Logo_C_sharp.svg.png"
-                                        alt="csharp logo"
-                                    />
-                                </div>
-                                <div class="tile-label">C#</div>
+                    <div class="tile tile-single tile-teal">
+                        <div class="tile-content">
+                            <div class="tile-icon">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/3840px-Vue.js_Logo_2.svg.png"
+                                    alt="vue logo" />
                             </div>
-                        </div>
-                        <div class="tile tile-single tile-blue">
-                            <div class="tile-content">
-                                <div class="tile-icon">
-                                    <img
-                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/960px-Typescript_logo_2020.svg.png"
-                                        alt="ts logo"
-                                    />
-                                </div>
-                                <div class="tile-label">TypeScript</div>
-                            </div>
-                        </div>
-                        <div class="tile tile-single tile-teal">
-                            <div class="tile-content">
-                                <div class="tile-icon">
-                                    <img
-                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/3840px-Vue.js_Logo_2.svg.png"
-                                        alt="vue logo"
-                                    />
-                                </div>
-                                <div class="tile-label">Vue</div>
-                            </div>
-                        </div>
-                        <div class="tile tile-single tile-node">
-                            <div class="tile-content">
-                                <div class="tile-icon">
-                                    <img
-                                        src="https://www.vectorlogo.zone/logos/nodejs/nodejs-icon.svg"
-                                        alt="nodejs icon"
-                                    />
-                                </div>
-                                <div class="tile-label">Node.js</div>
-                            </div>
+                            <div class="tile-label">Vue</div>
                         </div>
                     </div>
-                </section>
-            </div>
+                    <div class="tile tile-single tile-node">
+                        <div class="tile-content">
+                            <div class="tile-icon">
+                                <img src="https://www.vectorlogo.zone/logos/nodejs/nodejs-icon.svg" alt="nodejs icon" />
+                            </div>
+                            <div class="tile-label">Node.js</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tile-group">
+                <h2 class="group-title">Всякое</h2>
+                <div class="tile-grid">
+                    <a href="https://ekyloff.neocities.org/" class="tile tile-single tile-mauve">
+                        <div class="tile-banner-wrapper">
+                            <img src="https://ekyloff.neocities.org/assets/web1/ekyloff.gif" alt="ekyloff" width="88"
+                                height="31" />
+                        </div>
+                        <div class="tile-label">ekyloff</div>
+                    </a>
+                    </a>
+                    <a href="javascript:void(0)" class="tile tile-single tile-green" onclick="copyBannerCode()">
+                        <div class="tile-banner-wrapper">
+                            <img src="banner-tipa.gif" alt="My Banner" width="88" height="31" />
+                        </div>
+                        <div class="tile-label">Мой баннер</div>
+                    </a>
+                </div>
+            </section>
         </div>
+    </div>
 
-        <script>
-            const PROXY_URL = "https://leenzery-dev.vercel.app/api/last-track";
+    <script>
+        const PROXY_URL = "https://leenzery-dev.vercel.app/api/last-track";
 
-            async function updateLastFM() {
-                try {
-                    const response = await fetch(PROXY_URL);
-                    const track = await response.json();
+        async function updateLastFM() {
+            try {
+                const response = await fetch(PROXY_URL);
+                const track = await response.json();
 
-                    if (track && !track.error) {
-                        const elName = document.querySelector(".track-name");
-                        const elArtist = document.querySelector(".artist-name");
-                        const elCover = document.querySelector(".lfm-cover");
-                        const elStatus = document.querySelector("#lfm-status");
+                if (track && !track.error) {
+                    const elName = document.querySelector(".track-name");
+                    const elArtist = document.querySelector(".artist-name");
+                    const elCover = document.querySelector(".lfm-cover");
+                    const elStatus = document.querySelector("#lfm-status");
 
-                        if (elName) elName.textContent = track.name;
-                        if (elArtist) elArtist.textContent = track.artist;
+                    if (elName) elName.textContent = track.name;
+                    if (elArtist) elArtist.textContent = track.artist;
 
-                        if (elCover) {
-                            if (track.image && track.image !== "") {
-                                elCover.src = track.image;
-                                elCover.style.display = "block";
-                            } else {
-                                elCover.style.display = "none";
-                            }
-                        }
-
-                        if (elStatus) {
-                            elStatus.textContent = track.nowplaying
-                                ? "Слушаю сейчас"
-                                : "Последний трек";
+                    if (elCover) {
+                        if (track.image && track.image !== "") {
+                            elCover.src = track.image;
+                            elCover.style.display = "block";
+                        } else {
+                            elCover.style.display = "none";
                         }
                     }
-                } catch (e) {
-                    console.error("LFM Proxy Error:", e);
+
+                    if (elStatus) {
+                        elStatus.textContent = track.nowplaying
+                            ? "Слушаю сейчас"
+                            : "Последний трек";
+                    }
                 }
+            } catch (e) {
+                console.error("LFM Proxy Error:", e);
             }
+        }
 
-            updateLastFM();
-            setInterval(updateLastFM, 30000);
+        updateLastFM();
+        setInterval(updateLastFM, 30000);
 
-            function calculateAge(birthDate) {
-                const diff = Date.now() - birthDate.getTime();
-                const ageDate = new Date(diff);
-                return Math.abs(ageDate.getUTCFullYear() - 1970);
-            }
+        function calculateAge(birthDate) {
+            const diff = Date.now() - birthDate.getTime();
+            const ageDate = new Date(diff);
+            return Math.abs(ageDate.getUTCFullYear() - 1970);
+        }
 
-            const birthDate = new Date("2006-10-12");
-            const ageDisplay = document.getElementById("age-display");
-            if (ageDisplay) {
-                ageDisplay.textContent = calculateAge(birthDate);
-            }
+        const birthDate = new Date("2006-10-12");
+        const ageDisplay = document.getElementById("age-display");
+        if (ageDisplay) {
+            ageDisplay.textContent = calculateAge(birthDate);
+        }
 
-            const container = document.querySelector(".groups-container");
-            container.addEventListener("wheel", (e) => {
-                if (window.innerWidth > 600) {
-                    e.preventDefault();
-                    container.scrollLeft += e.deltaY;
-                }
+        function copyBannerCode() {
+            const code = '<a href="https://leenzery.dev/" target="_blank"><img src="https://leenzery.dev/banner-tipa.gif" alt="Leenzery"></a>';
+            navigator.clipboard.writeText(code).then(() => {
+                alert('Код баннера скопирован в буфер обмена');
             });
-        </script>
-    </body>
+        }
+
+
+        const container = document.querySelector(".groups-container");
+        container.addEventListener("wheel", (e) => {
+            if (window.innerWidth > 600) {
+                e.preventDefault();
+                container.scrollLeft += e.deltaY;
+            }
+        });
+    </script>
+</body>
+
 </html>
