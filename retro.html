@@ -75,7 +75,7 @@
                                     width="50" height="50">
                                 <div class="lfm-text">
                                     <span class="track-name" id="lfm-track-name">Загрузка...</span><br>
-                                    <span class="artist-name">Last.fm</span>
+                                    <span class="artist-name" id="lfm-artist-name">Last.fm</span>
                                 </div>
                                 <div class="clear"></div>
                             </div>
@@ -287,10 +287,12 @@
             getJSON(PROXY_URL, function (track) {
                 if (track && !track.error) {
                     var elName = document.getElementById("lfm-track-name");
+                    var elArtist = document.getElementById("lfm-artist-name");
                     var elCover = document.getElementById("lfm-cover-img");
                     var elStatus = document.getElementById("lfm-status");
 
-                    if (elName) elName.innerHTML = track.name + " - " + track.artist;
+                    if (elName) elName.innerHTML = track.name;
+                    if (elArtist) elArtist.innerHTML = track.artist;
 
                     if (elCover) {
                         if (track.image && track.image !== "") {
